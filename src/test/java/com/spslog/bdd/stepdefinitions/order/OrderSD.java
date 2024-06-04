@@ -16,11 +16,10 @@ import java.util.List;
 public class OrderSD {
     private WebDriver driver;
 
-
     @Given("a guest user")
     public void aGuestUser() {
         driver = DriverFactory.getDriver();
-        new StorePage(driver).load("https://askomdch.com");
+        new StorePage(driver).load("/store");
     }
 
     @And("user has multiple products in cart")
