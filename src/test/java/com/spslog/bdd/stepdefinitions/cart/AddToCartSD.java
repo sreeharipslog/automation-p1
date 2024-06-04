@@ -16,7 +16,7 @@ public class AddToCartSD {
     @Given("User is on the Store page")
     public void userIsOnTheStorePage() {
         driver = DriverFactory.getDriver();
-        new StorePage(driver).load("https://askomdch.com/store/");
+        new StorePage(driver).load("/store");
     }
 
     @When("user adds {int} {string} to the cart")
