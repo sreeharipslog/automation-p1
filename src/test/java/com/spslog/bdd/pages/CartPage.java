@@ -112,11 +112,11 @@ public class CartPage extends BasePage {
                 enterBillingEmail(address.email());
     }
 
-    public void placeOrder(){
+    public void placeOrder() {
         wait.until(ExpectedConditions.elementToBeClickable(placeOrderBtn)).click();
     }
 
-    public String getNotice(){
+    public String getNotice() {
         return wait.until(ExpectedConditions.visibilityOf(noticeText)).getText();
     }
 }
