@@ -10,12 +10,12 @@ import java.util.ResourceBundle;
  * Singleton config loader
  */
 public class ConfigLoader {
-    private final ResourceBundle properties;
     private static ConfigLoader configLoader;
+    private final ResourceBundle properties;
 
     private ConfigLoader() {
         String env = System.getProperty("env", EnvType.DEV.toString()).toUpperCase();
-        switch (EnvType.valueOf(env)){
+        switch (EnvType.valueOf(env)) {
             case DEV -> this.properties = ResourceBundle.getBundle("dev-config");
             case PROD -> this.properties = ResourceBundle.getBundle("prod-config");
             default -> throw new IllegalArgumentException("Environment provided is not valid");

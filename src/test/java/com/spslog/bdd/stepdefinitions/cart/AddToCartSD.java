@@ -1,7 +1,7 @@
-
 package com.spslog.bdd.stepdefinitions.cart;
 
 import com.spslog.bdd.contants.EndPoint;
+import com.spslog.bdd.domain.Product;
 import com.spslog.bdd.factory.DriverFactory;
 import com.spslog.bdd.pages.CartPage;
 import com.spslog.bdd.pages.StorePage;
@@ -20,17 +20,17 @@ public class AddToCartSD {
         new StorePage(driver).load(EndPoint.STORE.path);
     }
 
-    @When("user adds {int} {string} to the cart")
-    public void userAddsToTheCart(int quantity, String productName) {
+    @When("user adds {int} {product} to the cart")
+    public void userAddsToTheCart(int quantity, Product product) {
         StorePage storePage = new StorePage(driver);
-        storePage.addProductQuantityToCart(quantity, productName);
+        storePage.addProductQuantityToCart(quantity, product);
         storePage.viewCart();
     }
 
-    @Then("user should see {int} {string} in the cart")
-    public void userShouldSeeInTheCart(int quantity, String pdtName) {
+    @Then("user should see {int} {product} in the cart")
+    public void userShouldSeeInTheCart(int quantity, Product product) {
         CartPage cartPage = new CartPage(driver);
-        Assert.assertEquals(pdtName, cartPage.getProductName());
+        Assert.assertEquals(product.name(), cartPage.getProductName());
         Assert.assertEquals(quantity, cartPage.getProductQuantity());
     }
 }

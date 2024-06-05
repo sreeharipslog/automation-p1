@@ -2,6 +2,7 @@ package com.spslog.bdd.stepdefinitions.order;
 
 import com.spslog.bdd.contants.EndPoint;
 import com.spslog.bdd.domain.Address;
+import com.spslog.bdd.domain.Product;
 import com.spslog.bdd.factory.DriverFactory;
 import com.spslog.bdd.pages.CartPage;
 import com.spslog.bdd.pages.StorePage;
@@ -24,7 +25,7 @@ public class OrderSD {
     }
 
     @And("user has multiple products in cart")
-    public void userHasMultipleInCart(List<String> products) {
+    public void userHasMultipleInCart(List<Product> products) {
         StorePage storePage = new StorePage(driver);
         storePage.addProductListToCart(products);
         storePage.viewCart();

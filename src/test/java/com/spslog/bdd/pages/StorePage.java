@@ -1,5 +1,6 @@
 package com.spslog.bdd.pages;
 
+import com.spslog.bdd.domain.Product;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,12 +24,12 @@ public class StorePage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn)).click();
     }
 
-    public void addProductQuantityToCart(int quantity, String productName) {
-        for (int x = 0; x < quantity; x++) addToCart(productName);
+    public void addProductQuantityToCart(int quantity, Product product) {
+        for (int x = 0; x < quantity; x++) addToCart(product.name());
     }
 
-    public void addProductListToCart(List<String> products) {
-        products.forEach(this::addToCart);
+    public void addProductListToCart(List<Product> products) {
+        products.forEach(pdt -> addToCart(pdt.name()));
     }
 
     public void viewCart() {
