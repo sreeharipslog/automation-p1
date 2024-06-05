@@ -1,5 +1,6 @@
 package com.spslog.bdd.stepdefinitions.order;
 
+import com.spslog.bdd.contants.EndPoint;
 import com.spslog.bdd.domain.Address;
 import com.spslog.bdd.factory.DriverFactory;
 import com.spslog.bdd.pages.CartPage;
@@ -19,7 +20,7 @@ public class OrderSD {
     @Given("a guest user")
     public void aGuestUser() {
         driver = DriverFactory.getDriver();
-        new StorePage(driver).load("/store");
+        new StorePage(driver).load(EndPoint.STORE.path);
     }
 
     @And("user has multiple products in cart")

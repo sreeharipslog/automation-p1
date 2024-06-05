@@ -1,6 +1,7 @@
 
 package com.spslog.bdd.stepdefinitions.cart;
 
+import com.spslog.bdd.contants.EndPoint;
 import com.spslog.bdd.factory.DriverFactory;
 import com.spslog.bdd.pages.CartPage;
 import com.spslog.bdd.pages.StorePage;
@@ -16,7 +17,7 @@ public class AddToCartSD {
     @Given("User is on the Store page")
     public void userIsOnTheStorePage() {
         driver = DriverFactory.getDriver();
-        new StorePage(driver).load("/store");
+        new StorePage(driver).load(EndPoint.STORE.path);
     }
 
     @When("user adds {int} {string} to the cart")
