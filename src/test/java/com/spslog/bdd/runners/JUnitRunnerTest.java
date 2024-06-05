@@ -8,7 +8,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty", "html:reports/automation-report.html", "summary"},
+        plugin = {"pretty", "html:target/cucumber/automation-report.html", "summary"},
         snippets = CAMELCASE,
         tags = "@regression",
         glue = {"com.spslog.bdd"},
