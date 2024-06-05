@@ -9,8 +9,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
  */
 public class DriverFactory {
 
-    private static final String chromePath = "D:\\intercax\\softwares\\chrome-for-testing\\chrome-125.0.6422.141\\chrome.exe";
-    private static final String chromeDriverPath = "D:\\intercax\\softwares\\chrome-for-testing\\driver\\chromedriver-125.0.6422.141\\chromedriver.exe";
+    private static final String chromePath = "D:\\tsoftwares\\chrome-for-testing\\chrome-125.0.6422.141\\chrome.exe";
+    private static final String chromeDriverPath = "D:\\tsoftwares\\chrome-for-testing\\driver\\chromedriver-125.0.6422.141\\chromedriver.exe";
     private static WebDriver driver;
 
     public static WebDriver initializeDriver() {
