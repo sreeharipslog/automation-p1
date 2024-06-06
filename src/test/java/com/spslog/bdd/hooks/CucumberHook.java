@@ -1,5 +1,6 @@
 package com.spslog.bdd.hooks;
 
+import com.spslog.bdd.contants.Browser;
 import com.spslog.bdd.factory.DriverFactory;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -13,8 +14,9 @@ public class CucumberHook {
 
     @Before
     public void before(Scenario s) {
-        System.out.printf("BEFORE: Scenario: %s, Thread = %s%n", s.getName(), Thread.currentThread().getId());
-        driver = DriverFactory.initializeDriver();
+        System.out.printf("BEFORE: Scenario: %s, Thread = %s%n", s.getName(), Thread.currentThread().threadId());
+        String browser = System.getProperty("browser", Browser.CHROME.toString()).toUpperCase();
+        driver = DriverFactory.initializeDriver(browser);
     }
 
     @After(order = 1)
@@ -25,7 +27,7 @@ public class CucumberHook {
 
     @After(order = 0)
     public void after(Scenario s) {
-        System.out.printf("AFTER: Scenario: %s, THREAD = %s%n", s.getName(), Thread.currentThread().getId());
+        System.out.printf("AFTER: Scenario: %s, THREAD = %s%n", s.getName(), Thread.currentThread().threadId());
         driver.quit();
     }
 
