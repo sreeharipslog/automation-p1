@@ -2,7 +2,7 @@ My automation project (1) using the website https://askomdch.com/
 
 <h4>Framework Stack:</h4>
 
-1. Java 17
+1. Java 21
 2. Cucumber
 3. Selenium
 4. JUnit/TestNG

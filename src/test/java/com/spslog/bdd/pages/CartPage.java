@@ -37,6 +37,9 @@ public class CartPage extends BasePage {
     @FindBy(id = "billing_email")
     WebElement emailFld;
 
+    @FindBy(xpath = "//h3[@id='order_review_heading']")
+    WebElement yourOrderTxt;
+
     public CartPage(WebDriver driver) {
         super(driver);
     }
@@ -113,6 +116,7 @@ public class CartPage extends BasePage {
     }
 
     public void placeOrder() {
+        wait.until(ExpectedConditions.visibilityOf(yourOrderTxt));
         wait.until(ExpectedConditions.elementToBeClickable(placeOrderBtn)).click();
     }
 
