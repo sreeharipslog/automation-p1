@@ -25,9 +25,14 @@
             <artifactId>selenium-java</artifactId>
             <version>4.21.0</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
+            <version>7.17.0</version>
+        </dependency>-->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
             <version>7.17.0</version>
         </dependency>
     </dependencies>
@@ -40,9 +45,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <parallel>methods</parallel>
+                    <!--<parallel>methods</parallel>-->
+                    <!--<parallel>classes</parallel>-->
                     <!--<useUnlimitedThreads>true</useUnlimitedThreads>-->
-                    <threadCount>3</threadCount>
+                    <!--<threadCount>3</threadCount>-->
                 </configuration>
             </plugin>
         </plugins>

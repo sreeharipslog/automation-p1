@@ -13,6 +13,8 @@ public class StorePage extends BasePage {
 
     @FindBy(css = "a[title='View cart']")
     private WebElement viewCartBtn;
+    @FindBy(xpath = "//h1[normalize-space()='Store']")
+    private WebElement titleText;
 
     public StorePage(WebDriver driver) {
         super(driver);
@@ -34,6 +36,7 @@ public class StorePage extends BasePage {
 
     public void viewCart() {
         // Replaced manual Thread.sleep with implicit wait.
+        wait.until(ExpectedConditions.visibilityOf(titleText));
         wait.until(ExpectedConditions.elementToBeClickable(viewCartBtn)).click();
     }
 }

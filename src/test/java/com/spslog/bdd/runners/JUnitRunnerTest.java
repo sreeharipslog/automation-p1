@@ -1,4 +1,4 @@
-package com.spslog.bdd.runners;
+/*package com.spslog.bdd.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -16,3 +16,4 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
 )
 public class JUnitRunnerTest {
 }
+*/

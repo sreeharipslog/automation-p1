@@ -13,7 +13,7 @@ public class CucumberHook {
 
     @Before
     public void before(Scenario s) {
-        System.out.printf("BEFORE: Scenario: %s, Thread = %s", s.getName(), Thread.currentThread().getId());
+        System.out.printf("BEFORE: Scenario: %s, Thread = %s%n", s.getName(), Thread.currentThread().getId());
         driver = DriverFactory.initializeDriver();
     }
 
@@ -25,7 +25,7 @@ public class CucumberHook {
 
     @After(order = 0)
     public void after(Scenario s) {
-        System.out.printf("AFTER: Scenario: %s, THREAD = %s", s.getName(), Thread.currentThread().getId());
+        System.out.printf("AFTER: Scenario: %s, THREAD = %s%n", s.getName(), Thread.currentThread().getId());
         driver.quit();
     }
 
