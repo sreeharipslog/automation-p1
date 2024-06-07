@@ -19,7 +19,7 @@ jobs:
 
       - uses: browser-actions/setup-chrome@latest
       - name: Run Cucumber Tests
-        run: ./mvn clean test
+        run: mvn clean test
 
       - name: Update README with Cucumber Report
         run: |
