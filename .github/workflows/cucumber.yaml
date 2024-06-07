@@ -1,4 +1,4 @@
-name: Run Cucumber Tests and Update README
+name: Run Cucumber Tests and Update Report
 
 on:
   workflow_dispatch:
@@ -21,17 +21,12 @@ jobs:
       - name: Run Cucumber Tests
         run: mvn clean test
 
-      - name: Update README with Cucumber Report
-        run: |
-          echo "## Cucumber Test Report" > README.md
-          cat target/cucumber/automation-report.html >> README.md
-
       - name: Commit changes
         env:
           GITHUB_TOKEN: ${{ secrets.REPORT_GEN }}
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add README.md
-          git commit -m "Update README with Cucumber Report"
+          git add .
+          git commit -m "Update Cucumber Report"
           git push
