@@ -9,7 +9,7 @@ import static io.cucumber.testng.CucumberOptions.SnippetType.CAMELCASE;
 @CucumberOptions(
         plugin = {
                 //"pretty",
-                "html:docs/automation-report.html",
+                "html:docs/index.html",
                 "summary",
                 "progress"
         },
