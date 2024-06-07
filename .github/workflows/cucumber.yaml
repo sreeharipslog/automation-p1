@@ -24,7 +24,7 @@ jobs:
       - name: Update README with Cucumber Report
         run: |
           echo "## Cucumber Test Report" > README.md
-          cat target/cucumber-html-reports/overview-features.html >> README.md
+          cat target/cucumber/automation-report.html >> README.md
 
       - name: Commit changes
         run: |
