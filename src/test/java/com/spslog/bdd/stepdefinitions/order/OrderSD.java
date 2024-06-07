@@ -32,7 +32,7 @@ public class OrderSD {
         storePage.viewCart();
     }
 
-    @And("navigates to checkout page")
+    @And("user navigates to checkout page")
     public void navigatesToCheckoutPage() {
         new CartPage(driver).proceedToCheckout();
     }

@@ -7,7 +7,12 @@ import org.testng.annotations.DataProvider;
 import static io.cucumber.testng.CucumberOptions.SnippetType.CAMELCASE;
 
 @CucumberOptions(
-        plugin = {"pretty", "html:target/cucumber/automation-report.html", "summary"},
+        plugin = {
+                //"pretty",
+                "html:target/cucumber/automation-report.html",
+                "summary",
+                "progress"
+        },
         snippets = CAMELCASE,
         tags = "@regression",
         glue = {"com.spslog.bdd"},
