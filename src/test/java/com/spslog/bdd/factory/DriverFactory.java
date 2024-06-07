@@ -23,17 +23,13 @@ public class DriverFactory {
         Browser browser = Browser.valueOf(browserString);
         WebDriver driver = switch (browser) {
             case CHROME, HEADLESS_CHROME -> {
-                System.setProperty("webdriver.chrome.driver", CHROME.driverPath);
                 ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.setBinary(CHROME.path);
+                //chromeOptions.setBinary(CHROME.path);
                 //if (browser == HEADLESS_CHROME) chromeOptions.addArguments("--headless");
                 chromeOptions.addArguments("--headless");
                 yield new ChromeDriver(chromeOptions);
             }
-            case FIREFOX -> {
-                System.setProperty("webdriver.gecko.driver", FIREFOX.driverPath);
-                yield new FirefoxDriver();
-            }
+            case FIREFOX -> new FirefoxDriver();
             default -> throw new IllegalArgumentException("Browser is not valid");
         };
         driver.manage().window().maximize();
