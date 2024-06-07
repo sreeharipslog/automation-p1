@@ -26,7 +26,8 @@ public class DriverFactory {
                 System.setProperty("webdriver.chrome.driver", CHROME.driverPath);
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.setBinary(CHROME.path);
-                if (browser == HEADLESS_CHROME) chromeOptions.addArguments("--headless");
+                //if (browser == HEADLESS_CHROME) chromeOptions.addArguments("--headless");
+                chromeOptions.addArguments("--headless");
                 yield new ChromeDriver(chromeOptions);
             }
             case FIREFOX -> {

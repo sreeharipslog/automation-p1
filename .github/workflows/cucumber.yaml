@@ -1,0 +1,37 @@
+name: Run Cucumber Tests and Update README
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-cucumber:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '21'
+
+      - name: Install dependencies
+        run: ./mvnw clean install
+
+      - name: Run Cucumber Tests
+        run: ./mvnw clean test
+
+      - name: Update README with Cucumber Report
+        run: |
+          echo "## Cucumber Test Report" > README.md
+          cat target/cucumber-html-reports/overview-features.html >> README.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git commit -m "Update README with Cucumber Report"
+          git push
