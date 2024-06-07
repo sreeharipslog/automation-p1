@@ -12,6 +12,6 @@ My automation project (1) using the website https://askomdch.com/
 1. Page Object Model
 2. Dependency Injection / Factory Pattern
 3. Singleton Pattern
-4. Builder Pattern
+4. Builder Pattern 
 
 **Note:** Generated test report will be located at `../docs/automation-report.html`
