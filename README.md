@@ -14,4 +14,7 @@ My automation project (1) using the website https://askomdch.com/
 3. Singleton Pattern
 4. Builder Pattern 
 
-**Note:** Generated test report will be located at `../docs/automation-report.html`
+**Note:** 
+1. Generated test report will be located at local folder `../docs/automation-report.html`
+2. Visit https://sreeharipslog.github.io/automation-p1/ to see results of this repo
+
